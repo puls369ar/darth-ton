@@ -10,8 +10,14 @@ Notes
 * `cont` is the type of TVM continuations. Continuations are used for controlling the flow of the TVM program execution. It is rather low-level object from the perspective of FunC, although paradoxically quite general.
 * 
 
-`cell::begin_parse()` - Extracts whole message data and returns it in a `slice` type
-`slice::load_uint(int n)` - Reads first `n` and returns it after converting into `int` type
+`slice cs = in_msg_full.begin_parse()` - `in_msg_full` is the `cell` representing full message sent to the contract via `recv_internal()` function. It's `begin_parse()` method extracts whole message data in a form of `slice` variable
+
+There is a set of methods existing on `slice` type. Those need to be called order to parse necessary data correctly 
+`cs~load_uint(int n)` - Reads first `n` and returns it after converting into `int` type
+`cs~load_msg_addr()` - Reads message sender's address as a `slice` value
+`cs~load_coins()` - 
+`cs~skip_bits(1)` -
+`cs~load_coins()`
 
 # Base Functions
 
@@ -26,6 +32,11 @@ It is important to keep the signature correct `(cell in_msg_full, slice in_msg_b
 * `cell in_msg_full` - Whole messasge sent to the contract
 * `slice in_msg_body` - Main part of the message in a form of slice extracted from `in_msg_full`
 
+# Specifiers
+* ՝impure՝ - specifier means that the function can have some side effects which can't be ignored. For example, we should put impure specifier if       the function can modify contract storage, send messages, or throw an exception when some data is invalid and the function is intended to            validate this data
+* ՝inline՝ - 
+* ՝inline_ref՝
+* ՝method_id՝
 
 
 
