@@ -10,6 +10,7 @@ Notes
 * `cont` is the type of TVM continuations. Continuations are used for controlling the flow of the TVM program execution. It is rather low-level object from the perspective of FunC, although paradoxically quite general.
 * 
 
+
 `slice cs = in_msg_full.begin_parse()` - `in_msg_full` is the `cell` representing full message sent to the contract via `recv_internal()` function. It's `begin_parse()` method extracts whole message data in a form of `slice` variable
 
 There is a set of methods existing on `slice` type. Those need to be called order to parse necessary data correctly 
@@ -26,6 +27,11 @@ There is a set of methods existing on `slice` type. Those need to be called orde
 
 }
 ```
+
+`stdlib` functions 
+`send_raw_message` - sends messages to the contracts
+`set_data` - Stores the data in the contract
+
 
 *TON FunC* smart contract's `recv_internal()` function is called when message is passed to it. 
 It is important to keep the signature correct `(cell in_msg_full, slice in_msg_body) impure`
