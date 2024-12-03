@@ -1,3 +1,6 @@
+Notes
+* Unlike Solidity in FunC we don't have predefined functions in the contract that users can call, but one function that parses the message, gets the neccessary flag and triggers neccessary instructions from inside
+
 # Types
 * `int` is the type of 257-bit signed integers. By default, overflow checks are enabled and lead to integer overflow exceptions.
 * `cell` is the type of TVM cells. All persistent data in TON Blockchain is stored in trees of cells. Every cell has up to 1023 bits of arbitrary data and up to four references, 256 bits each, to other cells. Cells serve as memory in stack-based TVMs.
