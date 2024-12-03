@@ -1,4 +1,4 @@
-# darth-ton
+# Darth Ton
 
 ## Notes
 * If we deploy the contract with the same `code` and `data` fields as the existing smart contract, the deploying contract will merge into the existing one and have the same address as the existing one.
@@ -27,4 +27,6 @@ Cryptographically speaking huge amount of keypairs can be generated from mother 
 
 Accounts can have three status values
 * Nonexist - When no iteraction happened with the account at all
-* Uninitialized - 
+* Uninitialized -
+
+
